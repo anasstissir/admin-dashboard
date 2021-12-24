@@ -1,5 +1,6 @@
 package com.uir.club.admin.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,9 +15,11 @@ import java.util.Set;
 @Entity
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
     private String login;
+    @JsonIgnore
     private String password;
     private Boolean isAdmin;
     private String firstname;
@@ -28,7 +31,7 @@ public class Student {
     private String residency;
     private LocalDate dateEnrollment;
     private String tel;
-    private String mail;
+    private String email;
 
     @ManyToMany(mappedBy = "students")
     Set<Club> clubs;
