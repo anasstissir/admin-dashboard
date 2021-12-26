@@ -5,7 +5,7 @@ import com.uir.club.admin.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 @AllArgsConstructor
