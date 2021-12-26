@@ -12,4 +12,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @CrossOrigin(origins = "*", methods = RequestMethod.GET)
 public interface StudentRepository  extends PagingAndSortingRepository<Student, Long> {
     Student findStudentByLogin(String login);
+    Student findStudentByLoginAndPassword(String login, String password);
 }
