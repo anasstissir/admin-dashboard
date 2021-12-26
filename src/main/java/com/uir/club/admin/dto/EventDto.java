@@ -1,20 +1,15 @@
-package com.uir.club.admin.model;
+package com.uir.club.admin.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Event {
-    @Id
-    @GeneratedValue
+public class EventDto {
     private Long id;
     private String title;
     private String responsible;
@@ -23,10 +18,5 @@ public class Event {
     private String place;
     private String description;
     private Double budget;
-    @Transient
-    private Club club;
-
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Transaction> transactions;
-
+    private String club;
 }

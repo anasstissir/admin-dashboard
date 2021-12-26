@@ -5,6 +5,5 @@ import com.uir.club.admin.model.Meeting;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "meetings", path = "meetings")
 public interface MeetingRepository extends PagingAndSortingRepository<Meeting, Long> {
 }
